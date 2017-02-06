@@ -17,6 +17,10 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+protected:
+    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event) ;
 };
 
 #endif // MAINWINDOW_H
