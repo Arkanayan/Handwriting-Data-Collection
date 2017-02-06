@@ -26,10 +26,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         mainwindow.cpp \
     graphicsscene.cpp  \
-    tablettestview.cpp
+    tablettestview.cpp \
+    point.cpp	\
 
 HEADERS  += mainwindow.h \
     graphicsscene.h	 \
-    tablettestview.h
+    tablettestview.h \
+    point.h \
 
 FORMS    += mainwindow.ui
