@@ -79,6 +79,8 @@ TabletTestView::TabletTestView(QWidget *parent) :
 	_pointerpath = new QGraphicsPathItem;
 	_pointerpath->hide();
     _testscene->addItem(_pointerpath);
+    currentPath = _pointerpath;
+
 
     _pointerpath1 = new QGraphicsPathItem;
     _pointerpath1->hide();
@@ -148,16 +150,17 @@ void TabletTestView::mousePressEvent(QMouseEvent *event)
 		path.moveTo(event->pos() + QPointF(0.5, 0.5));
 
 
-//        QGraphicsPathItem *_pointerpath = new QGraphicsPathItem;
-//        _pointerpath2->setPen(QPen(Qt::blue));
-//        _pointerpath2->setPath(path);
-//        _testscene->addItem(_pointerpath2);
-//        _pointerpath2->show();
+        QGraphicsPathItem *_pointerpath2 = new QGraphicsPathItem;
+        _pointerpath2->setPen(QPen(Qt::blue));
+        _pointerpath2->setPath(path);
+        _testscene->addItem(_pointerpath2);
+        _pointerpath2->show();
+        currentPath = _pointerpath2;
 
 
-        _pointerpath->setPen(QPen(Qt::blue));
-        _pointerpath->setPath(path);
-        _pointerpath->show();
+//        _pointerpath->setPen(QPen(Qt::blue));
+//        _pointerpath->setPath(path);
+//        _pointerpath->show();
 
 //         QPainterPath path1;
 //         path1.moveTo(event->pos() + QPointF(10.5, 0.5));
@@ -179,10 +182,10 @@ void TabletTestView::mouseMoveEvent(QMouseEvent *event)
 
 		// Add stroke to pointerpath
 		if(event->buttons()) {
-			QPainterPath path = _pointerpath->path();
+            QPainterPath path = currentPath->path();
             path.lineTo(event->pos() + QPointF(0.5, 0.5));
-			_pointerpath->setPath(path);
-
+            //_pointerpath->setPath(path);
+            currentPath->setPath(path);
 
 
             QPainterPath path1 = _pointerpath1->path();

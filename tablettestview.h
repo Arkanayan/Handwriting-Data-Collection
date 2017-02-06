@@ -67,6 +67,9 @@ private:
 	QGraphicsPathItem *_pointerpath;
     QGraphicsPathItem *_pointerpath1;
 
+    QGraphicsPathItem *currentPath;
+
+    int numStrokes = 0;
 	bool _pendown;
 	bool _ignoremousetablet;
 	bool _disabletablet;
