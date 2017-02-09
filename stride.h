@@ -10,6 +10,8 @@ class Stride
 public:
     Stride();
     QList<Point> points;
+    void addPoint(Point point);
+
 };
 
 #endif // STRIDE_H

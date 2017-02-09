@@ -15,6 +15,6 @@ void Point::setPressure(double pressure) {
     this->pressure = pressure;
 }
 
-double Point::getPressure() {
+double Point::getPressure() const {
     return this->pressure;
 }
