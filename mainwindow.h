@@ -2,6 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "stride.h"
+#include <QTabletEvent>
+#include "alphabet.h"
+
 
 namespace Ui {
 class MainWindow;
@@ -14,13 +18,19 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+     Stride stride1;
 
 private:
     Ui::MainWindow *ui;
+    Alphabet alphabet;
 
-protected:
-    void mouseMoveEvent(QMouseEvent *event);
-    void mousePressEvent(QMouseEvent *event) ;
+public slots:
+    void showStrides(const QTabletEvent *);
+    void showPoints(const QTabletEvent *);
+    void showData();
+
+private slots:
+    void on_showData_clicked();
 };
 
 #endif // MAINWINDOW_H

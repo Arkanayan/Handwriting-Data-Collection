@@ -16,7 +16,14 @@
   <widget class="QWidget" name="centralWidget">
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="TabletTestView" name="graphicsView"/>
+     <widget class="QPushButton" name="showData">
+      <property name="text">
+       <string>Show</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="TabletTestView" name="tabletView"/>
     </item>
    </layout>
   </widget>

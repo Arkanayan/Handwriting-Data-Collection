@@ -23,7 +23,7 @@
 #include <QGraphicsScene>
 #include <QGraphicsSimpleTextItem>
 #include <QGraphicsPathItem>
-
+#include <QDebug>
 #include "tablettestview.h"
 
 namespace {
@@ -260,6 +260,7 @@ bool TabletTestView::viewportEvent(QEvent *event)
            // _pointerpath->setPath(path);
 
             currentPath->setPath(path);
+         //   qDebug() << "new point " << (static_cast<QTabletEvent*>(event))->pressure();
 
             emit newPointEvent(static_cast<QTabletEvent*>(event));
 
@@ -286,6 +287,8 @@ bool TabletTestView::viewportEvent(QEvent *event)
         currentPath = _pointerpath2;
 
         emit newStrideEvent(static_cast<QTabletEvent*>(event));
+//        // Because every stride/storke starts with a point / don't need it
+//        emit newPointEvent(static_cast<QTabletEvent*>(event));
 
 	} else if(event->type() == QEvent::TabletRelease) {
 		event->accept();

@@ -25,15 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    graphicsscene.cpp  \
     tablettestview.cpp \
     point.cpp	\
-    stride.cpp
+    stride.cpp \
+    alphabet.cpp
 
 HEADERS  += mainwindow.h \
-    graphicsscene.h	 \
     tablettestview.h \
     point.h \
-    stride.h
+    stride.h \
+    alphabet.h
 
 FORMS    += mainwindow.ui
