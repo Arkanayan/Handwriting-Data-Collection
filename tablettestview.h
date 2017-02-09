@@ -46,6 +46,8 @@ public slots:
 
 signals:
 	void logEvent(const QString &message);
+    void newStrideEvent(const QTabletEvent *event);
+    void newPointEvent(const QTabletEvent *event);
 
 protected:
 	void resizeEvent(QResizeEvent *event);

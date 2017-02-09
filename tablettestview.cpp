@@ -254,9 +254,15 @@ bool TabletTestView::viewportEvent(QEvent *event)
 
 		// Continue pointer path
 		if(_pendown) {
-			QPainterPath path = _pointerpath->path();
+            //QPainterPath path = _pointerpath->path();
+            QPainterPath path = currentPath->path();
 			path.lineTo(tabletEventPos(event));
-			_pointerpath->setPath(path);
+           // _pointerpath->setPath(path);
+
+            currentPath->setPath(path);
+
+            emit newPointEvent(static_cast<QTabletEvent*>(event));
+
 		}
 
 	} else if(event->type() == QEvent::TabletPress) {
@@ -267,9 +273,19 @@ bool TabletTestView::viewportEvent(QEvent *event)
 		// Start pointer path
 		QPainterPath path;
 		path.moveTo(tabletEventPos(event));
-		_pointerpath->setPath(path);
-		_pointerpath->setPen(QPen(Qt::red));
-		_pointerpath->show();
+//		_pointerpath->setPath(path);
+//		_pointerpath->setPen(QPen(Qt::red));
+//		_pointerpath->show();
+
+
+        QGraphicsPathItem *_pointerpath2 = new QGraphicsPathItem;
+        _pointerpath2->setPen(QPen(Qt::red));
+        _pointerpath2->setPath(path);
+        _testscene->addItem(_pointerpath2);
+        _pointerpath2->show();
+        currentPath = _pointerpath2;
+
+        emit newStrideEvent(static_cast<QTabletEvent*>(event));
 
 	} else if(event->type() == QEvent::TabletRelease) {
 		event->accept();
