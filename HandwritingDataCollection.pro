@@ -28,10 +28,12 @@ SOURCES += main.cpp\
     graphicsscene.cpp  \
     tablettestview.cpp \
     point.cpp	\
+    stride.cpp
 
 HEADERS  += mainwindow.h \
     graphicsscene.h	 \
     tablettestview.h \
     point.h \
+    stride.h
 
 FORMS    += mainwindow.ui
