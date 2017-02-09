@@ -5,7 +5,7 @@
 #include <QList>
 #include "point.h"
 
-class Stride
+class Stride : public QList<Point>
 {
 public:
     Stride();

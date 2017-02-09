@@ -11,7 +11,7 @@ Point::Point(int X, int Y, double pressure) : QPoint(X, Y), pressure(pressure)
 }
 
 
-void Point::setPressure(double pressure) {
+void Point::setPressure(const double pressure) {
     this->pressure = pressure;
 }
 

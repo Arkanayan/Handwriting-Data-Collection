@@ -9,7 +9,7 @@ public:
     Point(QPoint point, double pressure);
     Point(int X, int Y, double pressure);
     double getPressure() const;
-    void setPressure(double pressure);
+    void setPressure(const double pressure);
 
 private:
     double pressure;
