@@ -10,7 +10,7 @@ class Stride
 public:
     Stride();
     QList<Point> points;
-    void addPoint(Point point);
+    void addPoint(const Point point);
 
 };
 

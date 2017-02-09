@@ -5,7 +5,7 @@ Stride::Stride()
 
 }
 
-void Stride::addPoint(Point point) {
+void Stride::addPoint(const Point point) {
 
     points.append(point);
 }
