@@ -23,6 +23,13 @@
      </widget>
     </item>
     <item>
+     <widget class="QPushButton" name="pushButton">
+      <property name="text">
+       <string>Insert Point</string>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="TabletTestView" name="tabletView"/>
     </item>
    </layout>

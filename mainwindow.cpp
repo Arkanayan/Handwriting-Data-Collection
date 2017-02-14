@@ -7,6 +7,7 @@
 #include "alphabet.h"
 #include "stride.h"
 
+#include <QStandardPaths>
 #include <QTabletEvent>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -14,6 +15,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+  //  db = new DbManager(QStandardPaths::locate(QStandardPaths::HomeLocation, "hand.db"));
+    db = new DbManager();
+
+    db->createDb();
 
     statusBar()->showMessage(tr("Hello"));
 
@@ -90,4 +96,15 @@ MainWindow::~MainWindow()
 void MainWindow::on_showData_clicked()
 {
     showData();
+}
+
+void MainWindow::on_pushButton_clicked()
+{
+    qDebug() << "Last stride size: " << alphabet.last().size();
+    //db->insertStride(alphabet.last(), 324);
+    db->insertAlphabet(alphabet);
+//    for(int i = 0; i < alphabet.last().size(); i++) {
+//        Point tempPoint = alphabet.last().at(i);
+//        db->insertPoint(tempPoint, i, alphabet.size() - 1);
+//    }
 }

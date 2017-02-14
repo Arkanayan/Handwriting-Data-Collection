@@ -5,6 +5,7 @@
 #include "stride.h"
 #include <QTabletEvent>
 #include "alphabet.h"
+#include "dbmanager.h"
 
 
 namespace Ui {
@@ -23,6 +24,7 @@ public:
 private:
     Ui::MainWindow *ui;
     Alphabet alphabet;
+    DbManager *db;
 
 public slots:
     void showStrides(const QTabletEvent *);
@@ -31,6 +33,7 @@ public slots:
 
 private slots:
     void on_showData_clicked();
+    void on_pushButton_clicked();
 };
 
 #endif // MAINWINDOW_H

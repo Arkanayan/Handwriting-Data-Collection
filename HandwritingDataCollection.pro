@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -28,12 +28,14 @@ SOURCES += main.cpp\
     tablettestview.cpp \
     point.cpp	\
     stride.cpp \
-    alphabet.cpp
+    alphabet.cpp \
+    dbmanager.cpp
 
 HEADERS  += mainwindow.h \
     tablettestview.h \
     point.h \
     stride.h \
-    alphabet.h
+    alphabet.h \
+    dbmanager.h
 
 FORMS    += mainwindow.ui
