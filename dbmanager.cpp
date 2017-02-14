@@ -147,7 +147,7 @@ bool DbManager::insertPoint(const Point &point,const int position, const int str
 
 bool DbManager::insertAlphabet(const Alphabet &alphabet, const int user_id, const int sample_text_id) {
 
-    if(alphabet.size() == 0) {
+    if(alphabet.isEmpty()) {
         qDebug() << "Alphabet is empty! write something";
         return false;
     }
