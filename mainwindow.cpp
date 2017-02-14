@@ -7,6 +7,7 @@
 #include "alphabet.h"
 #include "stride.h"
 
+#include <QMessageBox>
 #include <QStandardPaths>
 #include <QTabletEvent>
 
@@ -76,11 +77,17 @@ void MainWindow::on_showData_clicked()
 
 void MainWindow::on_pushButton_clicked()
 {
-    qDebug() << "Last stride size: " << alphabet.last().size();
     //db->insertStride(alphabet.last(), 324);
-    db->insertAlphabet(alphabet);
-//    for(int i = 0; i < alphabet.last().size(); i++) {
-//        Point tempPoint = alphabet.last().at(i);
-//        db->insertPoint(tempPoint, i, alphabet.size() - 1);
-//    }
+    bool insertSuccess = db->insertAlphabet(alphabet);
+    QMessageBox msgBox;
+
+    if(insertSuccess) {
+        msgBox.setText(tr("Text inserted successfully."));
+        msgBox.exec();
+    } else {
+        msgBox.setText(tr("Text insertion failed. :("));
+        msgBox.setIcon(QMessageBox::Critical);
+        msgBox.exec();
+        qDebug() << "error msgbox";
+    }
 }
