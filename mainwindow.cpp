@@ -29,35 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->tabletView, SIGNAL(newPointEvent(const QTabletEvent*)), this, SLOT(showPoints(const QTabletEvent*)));
 
 
-    Point point(34, 32, 0.3);
-    Point point1( QPoint(34, 32), 0.333);
+    _eventlog = new EventLogDialog(this);
 
-    statusBar()->showMessage(QString::number(point.y()));
+    connect(ui->tabletView, SIGNAL(logEvent(QString)), _eventlog, SLOT(logEvent(QString)));
 
-    stride1.append(point);
-    stride1.append(point1);
-
-    Alphabet alpha;
-    alpha.append(stride1);
-    alpha.append(stride1);
-
-//    for(int i = 0; i < alpha.size(); ++i) {
-//        qDebug() << alpha.at(i).size();
-//    }
-    alpha.last().append(point);
-    qDebug() << alpha.last().last().getPressure();
-//    alpha.addNewStride();
-//    alpha.currentStride->points.append(point);
-//    alpha.addNewStride();
-//    alpha.currentStride->addPoint(point1);
-
-//    for(int i = 0; i < alpha.strides.size(); ++i) {
-//        qDebug() << "Stride at " << QString::number(i) << " " << alpha.strides.at(i).points.size();
-//        for(int j = 0; j < alpha.strides.at(i).points.size(); ++j) {
-//            qDebug() << "Point " << j << " of Stride " << i;
-//            qDebug() << QString::number(alpha.strides.at(i).points.at(j).getPressure());
-//        }
-//    }
+    connect(ui->eventLogAction, SIGNAL(triggered(bool)), _eventlog, SLOT(show()));
 
 }
 

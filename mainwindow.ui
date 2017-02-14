@@ -25,7 +25,7 @@
     <item>
      <widget class="QPushButton" name="pushButton">
       <property name="text">
-       <string>Insert Point</string>
+       <string>Save</string>
       </property>
      </widget>
     </item>
@@ -48,9 +48,21 @@
      <string>File</string>
     </property>
    </widget>
+   <widget class="QMenu" name="menuActions">
+    <property name="title">
+     <string>Actions</string>
+    </property>
+    <addaction name="eventLogAction"/>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuActions"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="eventLogAction">
+   <property name="text">
+    <string>Show event log</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>

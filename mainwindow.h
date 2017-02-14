@@ -6,6 +6,7 @@
 #include <QTabletEvent>
 #include "alphabet.h"
 #include "dbmanager.h"
+#include "eventlogdialog.h"
 
 
 namespace Ui {
@@ -25,6 +26,7 @@ private:
     Ui::MainWindow *ui;
     Alphabet alphabet;
     DbManager *db;
+    EventLogDialog *_eventlog;
 
 public slots:
     void showStrides(const QTabletEvent *);

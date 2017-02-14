@@ -287,6 +287,9 @@ bool TabletTestView::viewportEvent(QEvent *event)
         currentPath = _pointerpath2;
 
         emit newStrideEvent(static_cast<QTabletEvent*>(event));
+
+        emit logEvent("New Stride start " + _pointertext->text());
+
 //        // Because every stride/storke starts with a point / don't need it
 //        emit newPointEvent(static_cast<QTabletEvent*>(event));
 

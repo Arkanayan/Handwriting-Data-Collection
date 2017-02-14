@@ -29,13 +29,15 @@ SOURCES += main.cpp\
     point.cpp	\
     stride.cpp \
     alphabet.cpp \
-    dbmanager.cpp
+    dbmanager.cpp \
+    eventlogdialog.cpp
 
 HEADERS  += mainwindow.h \
     tablettestview.h \
     point.h \
     stride.h \
     alphabet.h \
-    dbmanager.h
+    dbmanager.h \
+    eventlogdialog.h
 
 FORMS    += mainwindow.ui
